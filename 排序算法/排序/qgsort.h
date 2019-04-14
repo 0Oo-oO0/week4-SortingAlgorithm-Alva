@@ -83,8 +83,6 @@ void ColorSort(int *a,int size);
  */
 int findK(int*a, int size, int k);
 
-
-
 void ifSuccess(int *a, int size);
 
 #endif // QUEUE_H_INCLUDED

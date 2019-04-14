@@ -8,21 +8,25 @@ void van()
 	static int array10000color[10000];
 	static int array50000color[50000];
 	static int array200000color[200000];
+	int array100[100];
+
 
 	static int Brray10000[10000];
 	static int Brray50000[50000];
 	static int Brray200000[200000];
+	int Brray100[100];
 
 	loadArray(array10000, array50000, array200000, array10000color, array50000color, array200000color);
 
 
-	clock_t start, end;
+	clock_t start, end, sum;
 
 	std::cout << "请选择调用函数" << std::endl;
 	std::cout << "1:insertSort	2:RadixCountSort	3:MergeSort	4:QuickSort_Recursion" << std::endl
 		<< "5:QuickSort	6:CountSort		7:ColorSort	8:findK" << std::endl;
 
 	char key1, key2;
+	srand((unsigned)time(NULL));
 
 	key1 = _getch();
 	std::cout << "是否使用预设数据 Y：使用 N：自设" << std::endl;
@@ -47,6 +51,19 @@ void van()
 			end = clock();
 			std::cout << "20w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array200000, 200000);
+			sum = 0;
+			for (int i = 0; i < 100000; i++)
+			{
+				for (int j = 0; j < 100; i++)
+				{
+					array100[j] = rand() % 10;
+				}
+				start = clock();
+				insertSort(array100, 100);
+				end = clock();
+				sum += end - start;
+			}
+			std::cout << "100*100k数据量用时 t=" << sum << "ms" << std::endl;
 			break;
 		case'2':
 			start = clock();
@@ -64,6 +81,19 @@ void van()
 			end = clock();
 			std::cout << "20w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array200000, 200000);
+			sum = 0;
+			for (int i = 0; i < 100000; i++)
+			{
+				for (int j = 0; j < 100; i++)
+				{
+					array100[j] = rand() % 10;
+				}
+				start = clock();
+				RadixCountSort(array100, 100);
+				end = clock();
+				sum += end - start;
+			}
+			std::cout << "100*100k数据量用时 t=" << sum << "ms" << std::endl;
 			break;
 		case'3':
 			start = clock();
@@ -81,6 +111,19 @@ void van()
 			end = clock();
 			std::cout << "20w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array200000, 200000);
+			sum = 0;
+			for (int i = 0; i < 100000; i++)
+			{
+				for (int j = 0; j < 100; i++)
+				{
+					array100[j] = rand() % 10;
+				}
+				start = clock();
+				MergeSort(array100, 0, 99, Brray100);
+				end = clock();
+				sum += end - start;
+			}
+			std::cout << "100*100k数据量用时 t=" << sum << "ms" << std::endl;
 			break;
 		case'4':
 			start = clock();
@@ -98,6 +141,19 @@ void van()
 			end = clock();
 			std::cout << "20w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array200000, 200000);
+			sum = 0;
+			for (int i = 0; i < 100000; i++)
+			{
+				for (int j = 0; j < 100; i++)
+				{
+					array100[j] = rand() % 10;
+				}
+				start = clock();
+				QuickSort_Recursion(array100, 0,99);
+				end = clock();
+				sum += end - start;
+			}
+			std::cout << "100*100k数据量用时 t=" << sum << "ms" << std::endl;
 			break;
 		case'5':
 			start = clock();
@@ -115,23 +171,49 @@ void van()
 			end = clock();
 			std::cout << "20w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array200000, 200000);
+			sum = 0;
+			for (int i = 0; i < 100000; i++)
+			{
+				for (int j = 0; j < 100; i++)
+				{
+					array100[j] = rand() % 10;
+				}
+				start = clock();
+				QuickSort(array100, 100);
+				end = clock();
+				sum += end - start;
+			}
+			std::cout << "100*100k数据量用时 t=" << sum << "ms" << std::endl;
 			break;
 		case'6':
 			start = clock();
-			CountSort(array10000, 10000, 10);
+			CountSort(array10000, 10000, 9);
 			end = clock();
 			std::cout << "1w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array10000, 10000);
 			start = clock();
-			CountSort(array50000, 50000, 10);
+			CountSort(array50000, 50000, 9);
 			end = clock();
 			std::cout << "5w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array50000, 50000);
 			start = clock();
-			CountSort(array200000, 200000, 10);
+			CountSort(array200000, 200000, 9);
 			end = clock();
 			std::cout << "20w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array200000, 200000);
+			sum = 0;
+			for (int i = 0; i < 100000; i++)
+			{
+				for (int j = 0; j < 100; i++)
+				{
+					array100[j] = rand() % 10;
+				}
+				start = clock();
+				CountSort(array100, 100, 9);
+				end = clock();
+				sum += end - start;
+			}
+			std::cout << "100*100k数据量用时 t=" << sum << "ms" << std::endl;
 			break;
 		case'7':
 			start = clock();
@@ -149,6 +231,19 @@ void van()
 			end = clock();
 			std::cout << "20w数据量用时 t=" << end - start << "ms" << std::endl;
 			ifSuccess(array200000color, 200000);
+			sum = 0;
+			for (int i = 0; i < 100000; i++)
+			{
+				for (int j = 0; j < 100; i++)
+				{
+					array100[j] = rand() % 3;
+				}
+				start = clock();
+				ColorSort(array100, 100);
+				end = clock();
+				sum += end - start;
+			}
+			std::cout << "100*100k数据量用时 t=" << sum << "ms" << std::endl;
 			break;
 		case'8':
 			std::cout << "请输入k值" << std::endl;

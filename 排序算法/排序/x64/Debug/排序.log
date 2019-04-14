@@ -1,0 +1,8 @@
+﻿  loadFile.cpp
+  main.cpp
+  qgsort.cpp
+  van.cpp
+  van.h
+  正在生成代码...
+x64\Debug\van.obj : warning LNK4042: 对象被多次指定；已忽略多余的指定
+  排序.vcxproj -> E:\Github\SortingAlgorithm\x64\Debug\排序.exe
